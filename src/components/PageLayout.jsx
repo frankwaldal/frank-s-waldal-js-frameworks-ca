@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import GamesContextProvider from '../context/GamesContextProvider';
-
 import Contact from '../pages/contact/Contact';
 import Favorites from '../pages/favorites/Favorites';
 import GameDetails from '../pages/gameDetails/GameDetails';

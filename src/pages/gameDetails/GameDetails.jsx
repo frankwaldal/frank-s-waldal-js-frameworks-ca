@@ -17,8 +17,8 @@ import { useLocation } from 'react-router-dom';
 
 import { API_BASE_URL } from '../../constants/apiConstants';
 import { fetchSingleOrListOfGames } from '../../utils/apiUtils';
-import { useGamesContext } from '../../context/GamesContextProvider';
 
+import { useGamesContext } from '../../context/GamesContextProvider';
 import GameDetailsGenres from './GameDetailsGenres';
 import GameDetailsPlatforms from './GameDetailsPlatforms';
 

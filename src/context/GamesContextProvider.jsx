@@ -21,7 +21,7 @@ export default function GamesContextProvider({ children }) {
         setFavorites(updatedFavorites);
       }
     } else {
-      if (favorites.includes(game)) {
+      if (favorites.some(favorite => favorite.id === game.id)) {
         const updatedFavorites = favorites.filter(favorite => favorite.id !== game.id);
         setFavorites(updatedFavorites);
       } else {
