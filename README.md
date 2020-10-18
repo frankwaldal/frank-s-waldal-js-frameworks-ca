@@ -1,3 +1,11 @@
+## Course Assignment for Noroff JS Frameworks course.
+
+### Short about the logic behind how this app was constructed.
+
+Due to the size of the app, I decided to go with a simple context to handle storage across the app. There are no complex data structures within the stored data, that need more complex functionality to handle.
+I also opted out of using the React Query's cache and stale times to cache API-responses as there are many different calls done within the app, and this wouldn't reduce the strain on the API much in the end. Only API-data that is stored are the favorites, this is stored in the context to make the handling of reading and modifying the favorites list easier across the app.
+The email API has an API-key that is not included in the repo, if you need access to this please contact me, else it is an easy conversion to your own or 3rd party API.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

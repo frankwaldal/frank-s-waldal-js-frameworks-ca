@@ -5,13 +5,14 @@ import React from 'react';
 export default function GameDetailsPlatforms({ platforms }) {
   return (
     <List>
-      {platforms.map(platform => {
+      {platforms.map(platformObj => {
+        const { platform } = platformObj;
         return (
-          <ListItem key={platform.platform.id+platform.platform.name}>
+          <ListItem key={platform.id+platform.name}>
             <ListItemAvatar>
-              <Avatar alt={platform.platform.name} src={platform.platform.image_background} />
+              <Avatar alt={platform.name} src={platform.image_background} />
             </ListItemAvatar>
-            <ListItemText primary={platform.platform.name} />
+            <ListItemText primary={platform.name} />
           </ListItem>
         )
       })}

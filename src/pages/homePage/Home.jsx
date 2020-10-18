@@ -1,8 +1,11 @@
-import { Container, Grid, LinearProgress, makeStyles, Typography } from '@material-ui/core';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Button, Container, Grid, LinearProgress, makeStyles, TextField, Typography } from '@material-ui/core';
 import { Alert, Pagination } from '@material-ui/lab';
 import sortBy from 'lodash/sortBy';
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
+import * as yup from 'yup';
 
 import { API_BASE_URL } from '../../constants/apiConstants';
 import { fetchSingleOrListOfGames } from '../../utils/apiUtils';
@@ -22,6 +25,17 @@ export default function Home() {
   const [apiUrl, setApiUrl] = useState(API_BASE_URL);
   const [currentApiPage, setCurrentApiPage] = useState(1);
   const [apiPagesCount, setApiPagesCount] = useState(0);
+
+  const schema = yup.object().shape({
+    apipage: yup.number().required('You need to provide a page value.').min(1, `Can't go to lower page than 1.`).max(apiPagesCount, 'You tried to go past last page.')
+  });
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  function gotoApiPage(e) {
+    handlePagination(e, e.apipage);
+  }
 
   const classes = useStyles();
 
@@ -62,9 +76,25 @@ export default function Home() {
             {filteredListOfGames.map(game => <GameItem key={game.id+game.name} game={game} />)}
           </Grid>
           {apiPagesCount > 0 ? (
+            <>
             <Grid container>
               <Pagination className={classes.pagination} variant='outlined' color='primary' count={apiPagesCount} page={currentApiPage} onChange={handlePagination} showFirstButton showLastButton />
             </Grid>
+            <Grid container>
+              <form onSubmit={handleSubmit(gotoApiPage)} style={{ margin: '0 auto 1rem', display: 'flex', alignItems: 'center' }}>
+                <TextField
+                  name='apipage'
+                  type='number'
+                  inputRef={register}
+                  label='Goto API page'
+                  error={errors.apipage !== undefined}
+                  helperText={errors.apipage ? errors.apipage.message : ''}
+                  margin='normal'
+                  />
+                <Button type='submit'>Go to</Button>
+              </form>
+            </Grid>
+            </>
           ) : null}
         </>
       ) : null}
