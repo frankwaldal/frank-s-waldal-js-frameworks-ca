@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <Container>
-      <Typography variant='h1' align='center' component='h2'>Games</Typography>
+      <Typography variant='h2' align='center' component='h2'>Games</Typography>
       {fetchGames.isLoading ? (
         <LinearProgress variant='query' />
       ): fetchGames.error ? (

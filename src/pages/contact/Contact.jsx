@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Button, Container, LinearProgress, Snackbar, TextField } from '@material-ui/core';
+import { Button, Container, LinearProgress, Snackbar, TextField, Typography } from '@material-ui/core';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { Alert } from '@material-ui/lab';
 import React, { useState } from 'react';
@@ -55,6 +55,7 @@ export default function Contact() {
 
   return (
     <Container>
+      <Typography variant='h2' align='center' component='h2'>Contact</Typography>
       {sendEmailMutationStatus.isLoading && <LinearProgress variant='query' />}
       <form onSubmit={handleSubmit(submitMessage)} style={{ display: 'flex', flexDirection: 'column', maxWidth: '500px', margin: '0 auto' }}>
         <TextField

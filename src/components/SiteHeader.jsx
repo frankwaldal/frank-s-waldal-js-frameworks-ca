@@ -14,13 +14,13 @@ export default function SiteHeader() {
       <nav>
         <ul style={{ display: 'flex' }}>
           <li style={listItemStyle}>
-            <Link to='/' className='muiStyleButton muiStyleButton muiStyleButton-text muiStyleButton-textPrimary muiStyleButton-textSizeLarge muiStyleButton-sizeLarge'>Home</Link>
+            <Link to='/' className='muiStyleButton muiStyleButton-text muiStyleButton-textPrimary muiStyleButton-textSizeLarge muiStyleButton-sizeLarge'>Home</Link>
           </li>
           <li style={listItemStyle}>
-            <Link to='/favorites' className='muiStyleButton muiStyleButton muiStyleButton-text muiStyleButton-textPrimary muiStyleButton-textSizeLarge muiStyleButton-sizeLarge'>Favorites</Link>
+            <Link to='/favorites' className='muiStyleButton muiStyleButton-text muiStyleButton-textPrimary muiStyleButton-textSizeLarge muiStyleButton-sizeLarge'>Favorites</Link>
           </li>
           <li style={listItemStyle}>
-            <Link to='/contact' className='muiStyleButton muiStyleButton muiStyleButton-text muiStyleButton-textPrimary muiStyleButton-textSizeLarge muiStyleButton-sizeLarge'>Contact</Link>
+            <Link to='/contact' className='muiStyleButton muiStyleButton-text muiStyleButton-textPrimary muiStyleButton-textSizeLarge muiStyleButton-sizeLarge'>Contact</Link>
           </li>
         </ul>
       </nav>

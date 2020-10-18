@@ -1,15 +1,12 @@
 .muiStyleButton {
-  color: inherit;
   border: 0;
   cursor: pointer;
   margin: 0;
   display: inline-flex;
   outline: 0;
-  padding: 0;
   position: relative;
   align-items: center;
   user-select: none;
-  border-radius: 0;
   vertical-align: middle;
   -moz-appearance: none;
   justify-content: center;
@@ -17,20 +14,6 @@
   background-color: transparent;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
-}
-.muiStyleButton::-moz-focus-inner {
-  border-style: none;
-}
-.muiStyleButton.Mui-disabled {
-  cursor: default;
-  pointer-events: none;
-}
-@media print {
-  .muiStyleButton {
-    -webkit-print-color-adjust: exact;
-  }
-}
-.muiStyleButton {
   color: #fff;
   padding: 6px 16px;
   font-size: 0.875rem;
@@ -44,12 +27,22 @@
   letter-spacing: 0.02857em;
   text-transform: uppercase;
 }
+.muiStyleButton::-moz-focus-inner {
+  border-style: none;
+}
+.muiStyleButton.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.3);
+}
+@media print {
+  .muiStyleButton {
+    -webkit-print-color-adjust: exact;
+  }
+}
 .muiStyleButton:hover {
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.08);
-}
-.muiStyleButton.Mui-disabled {
-  color: rgba(255, 255, 255, 0.3);
 }
 @media (hover: none) {
   .muiStyleButton:hover {

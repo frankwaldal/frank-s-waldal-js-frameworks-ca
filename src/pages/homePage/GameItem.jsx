@@ -73,7 +73,7 @@ export default function GameItem({ game }) {
         <Typography variant='body1' component='p' gutterBottom>
           Released: {format(new Date(game.released), 'do MMM yyyy')}
         </Typography>
-        <Link to={link} className='muiStyleButton muiStyleButton muiStyleButton-text'>More information</Link>
+        <Link to={link} className='muiStyleButton muiStyleButton-text'>More information</Link>
       </CardContent>
     </Card>
   )

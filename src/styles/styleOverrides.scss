@@ -1,3 +1,9 @@
 body {
   background: #8b869e;
 }
+.Mui-error {
+  color: #bb1047!important;
+}
+.MuiInput-underline.Mui-error:after {
+  border-bottom-color: #bb1047!important;
+}
